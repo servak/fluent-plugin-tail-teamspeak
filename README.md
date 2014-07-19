@@ -1,4 +1,5 @@
-# Fluent::Plugin::Tail::Teamspeak
+Teamspeak input plugin for Fluentd
+=================
 
 TODO: Write a gem description
 
@@ -8,22 +9,13 @@ Add this line to your application's Gemfile:
 
     gem 'fluent-plugin-tail-teamspeak'
 
-And then execute:
+## Configuration
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install fluent-plugin-tail-teamspeak
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( http://github.com/<my-github-username>/fluent-plugin-tail-teamspeak/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```
+<source>
+  type tail_teamspeak
+  path /teamspeak_path/logs/ts3server.log
+  pos_file /tmp/teamspeak.pos
+  tag ts3.server.access
+</source>
+```
